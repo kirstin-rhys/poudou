@@ -54,6 +54,8 @@
 ;; 				:repo "kirstin-rhys/poudou"
 ;; 				:files ("lisp/poudou/keybindings/*.el"))
 ;;   :demand t)
+
+
 ;; Company mode for autocompletion
 (use-package company
   :demand t
@@ -83,6 +85,8 @@
 	     :repo "leanprover-community/lean4-mode"
 	     :files ("*.el" "data"))
   :demand t)
+
+
 ; :hook (lean4-mode . prog-minor-modes-common)
 
 ;; (use-package poudou-programming
