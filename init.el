@@ -84,11 +84,14 @@
 
 
 (use-package poudou
-  :straight (poudou :local-repo "lisp/poudou" :files "*.el"))
- 
+  :straight (poudou :type git
+		    :host github
+		    :repo "kirstin-rhys/poudou"
+		    :files ("lisp/poudou/*.el"))
+  :demand t)
 
 (provide 'init)
 
 (server-start)
 (put 'downcase-region 'disabled nil)
-; (put 'set-goal-column 'disabled nil)
+;mm (put 'set-goal-column 'disabled nil)
