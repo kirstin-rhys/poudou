@@ -48,19 +48,19 @@
 ;;   ;; to defer loading the package until required
 ;;   :commands (lean4-mode))
 
-(use-package poudou-keybindings
-  :straight (poudou-keybindings :type git
-				:host github
-				:repo "kirstin-rhys/poudou"
-				:files ("lisp/poudou/keybindings/*.el"))
-  :demand t)
+;; (use-package poudou-keybindings
+;;   :straight (poudou-keybindings :type git
+;; 				:host github
+;; 				:repo "kirstin-rhys/poudou"
+;; 				:files ("lisp/poudou/keybindings/*.el"))
+;;   :demand t)
 
-(use-package poudou-programming
-  :straight (poudou-programming :type git
-				:host github
-				:repo "kirstin-rhys/poudou"
-				:files ("lisp/poudou/programming/*.el"))
-  :demand t)
+;; (use-package poudou-programming
+;;   :straight (poudou-programming :type git
+;; 				:host github
+;; 				:repo "kirstin-rhys/poudou"
+;; 				:files ("lisp/poudou/programming/*.el"))
+;;   :demand t)
 				
 (provide 'poudou)
 
