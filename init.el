@@ -80,7 +80,7 @@
    '(straight magit lsp-mode flycheck company-ghci caml company darcsum dash flymake-easy haskell-tab-indent slime vterm with-editor yaml-mode xkb-mode workgroups2 proof-general company-coq vc-darcs flymake-haskell-multi eglot elgot multiple-cursors kconfig-mode kconfig-ref markdown-mode ripgrep ansi package-build shut-up epl git commander f s haskell-mode pallet))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
- '(wg-session-file "~/.emacs.d/workgroups"))'
+ '(wg-session-file "~/.emacs.d/workgroups"))
 
 
 (use-package poudou
