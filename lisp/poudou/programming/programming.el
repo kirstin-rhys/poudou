@@ -94,42 +94,42 @@
 ;;   :straight t
 ;;   :defer t)
 
-(use-package flycheck
-  :straight t
-  :defer t
-  :config
-  (setq flycheck-idle-change-delay 2))
+;; (use-package flycheck
+;;   :straight t
+;;   :defer t
+;;   :config
+;;   (setq flycheck-idle-change-delay 2))
 
 
-;; LSP integration with flycheck
-(use-package lsp-ui
-  :demand t
-  :straight (lsp-ui :type git
-                    :host github
-                    :repo "emacs-lsp/lsp-ui")
-  :hook (lsp-mode-hook . lsp-ui-mode)
-  ;; (set-face-attribute 'lsp-ui-sideline-code-action nil
-  ;;                     :foreground "#4d4d4c"
-  ;;                     :background "#ffffff")
+;; ;; LSP integration with flycheck
+;; (use-package lsp-ui
+;;   :demand t
+;;   :straight (lsp-ui :type git
+;;                     :host github
+;;                     :repo "emacs-lsp/lsp-ui")
+;;   :hook (lsp-mode-hook . lsp-ui-mode)
+;;   ;; (set-face-attribute 'lsp-ui-sideline-code-action nil
+;;   ;;                     :foreground "#4d4d4c"
+;;   ;;                     :background "#ffffff")
 
-  ;; (set-face-attribute 'lsp-ui-sideline-current-symbol nil
-  ;;                     :foreground "white"
-  ;;                     :box '(:line-width -1 :color "white")
-  ;;                     :weight 'ultra-bold
-  ;;                     :height 0.80)
+;;   ;; (set-face-attribute 'lsp-ui-sideline-current-symbol nil
+;;   ;;                     :foreground "white"
+;;   ;;                     :box '(:line-width -1 :color "white")
+;;   ;;                     :weight 'ultra-bold
+;;   ;;                     :height 0.80)
 
-  ;; (set-face-attribute 'lsp-ui-sideline-symbol nil
-  ;;                     :foreground "#7f8c8d"
-  ;;                     :box '(:line-width -1 :color "#7f8c8d")
-  ;;                     :height 0.80)
-  :commands lsp-ui-mode)
+;;   ;; (set-face-attribute 'lsp-ui-sideline-symbol nil
+;;   ;;                     :foreground "#7f8c8d"
+;;   ;;                     :box '(:line-width -1 :color "#7f8c8d")
+;;   ;;                     :height 0.80)
+;;   :commands lsp-ui-mode)
 
 
-(use-package lsp-ui-flycheck
-  :demand t
-  :straight nil
-  :config (add-hook 'lsp-after-open-hook
-                    (lambda () (lsp-ui-flycheck-enable 1))))
+;; (use-package lsp-ui-flycheck
+;;   :demand t
+;;   :straight nil
+;;   :config (add-hook 'lsp-after-open-hook
+;;                     (lambda () (lsp-ui-flycheck-enable 1))))
 
 
 ;; ;; Python:
@@ -247,6 +247,7 @@
 
 
 ;; Lean4
+
 (use-package lean4-mode
   :straight (lean4-mode
 	     :type git
