@@ -1,0 +1,42 @@
+# Compiled
+*.elc
+
+# Backup files
+*~
+
+# Undo-tree save-files
+*.~undo-tree
+
+# autosave
+\#*\#
+.\#*
+
+# desktop
+.emacs.desktop
+.emacs.desktop.lock
+
+# language server protocol
+.lsp-session-*
+
+# multiple cursors
+.mc-lists.el
+
+# cask
+Cask
+
+# eln-cache
+eln-cache/
+
+# straight local repos and build
+local/
+straight/
+straight.old/
+
+# tramp
+tramp
+
+# transient
+transient/
+
+# workgroup state
+workgroups
