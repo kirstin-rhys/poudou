@@ -33,8 +33,8 @@
 
 ;;; update the melpa package list
 ;;; this is only for searching / browsing packages, not for installing
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+;(require 'package)
+;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 ;; (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
 
 ;; replace some package.el functions
