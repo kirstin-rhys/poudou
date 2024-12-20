@@ -2,7 +2,7 @@
 ;; 			 company
 ;; 			 company-coq
 ;; 			 company-ghci
-;; 			 darcsum
+;; 	                 darcsum
 ;; 			 dash
 ;; 			 dot-mode
 ;; 			 eglot
