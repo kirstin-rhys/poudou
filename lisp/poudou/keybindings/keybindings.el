@@ -7,12 +7,12 @@
   :config
   (global-undo-tree-mode 1))
 
-(use-package general
-  :demand t
-  :straight t
-  :config
-  (eval-and-compile
-    (require 'general)))
+;; (use-package general
+;;   :demand t
+;;   :straight t
+;;   :config
+;;   (eval-and-compile
+;;     (require 'general)))
 
 
 (provide 'poudou-keybindings)
