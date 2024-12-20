@@ -83,12 +83,24 @@
  '(wg-session-file "~/.emacs.d/workgroups"))
 
 
-(use-package poudou
-  :straight (poudou :type git
-		    :host github
-		    :repo "kirstin-rhys/poudou"
-		    :files ("lisp/poudou/*.el"))
-  :demand t)
+
+;; Lean4
+(use-package lean4-mode
+  :commands lean4-mode
+  :straight (lean4-mode
+	     :type git
+	     :host github
+	     :repo "leanprover-community/lean4-mode"
+	     :files ("*.el" "data")))
+; :hook (lean4-mode . prog-minor-modes-common)
+
+
+;; (use-package poudou
+;;   :straight (poudou :type git
+;; 		    :host github
+;; 		    :repo "kirstin-rhys/poudou"
+;; 		    :files ("lisp/poudou/*.el"))
+;;   :demand t)
 
 (provide 'init)
 
