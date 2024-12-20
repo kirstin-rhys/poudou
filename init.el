@@ -29,7 +29,7 @@
   :custom
   (straight-use-package-by-default t))
 
-(add-to-list 'load-path "~/.emacs.d/lisp")
+;; (add-to-list 'load-path "~/.emacs.d/lisp")
 
 ;;; update the melpa package list
 ;;; this is only for searching / browsing packages, not for installing
