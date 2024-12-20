@@ -88,7 +88,7 @@
   :straight (poudou :type git
 		    :host github
 		    :repo "kirstin-rhys/poudou"
-		    :files ("lisp/poudou/*.el"))
+		    :files ("poudou/*.el"))
   :demand t)
 
 
@@ -128,8 +128,11 @@
 
 
 
-(provide 'init)
+
 
 (server-start)
 (put 'downcase-region 'disabled nil)
 ;mm (put 'set-goal-column 'disabled nil)
+
+
+(provide 'init)
