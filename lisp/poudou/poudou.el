@@ -54,13 +54,43 @@
 ;; 				:repo "kirstin-rhys/poudou"
 ;; 				:files ("lisp/poudou/keybindings/*.el"))
 ;;   :demand t)
+;; Company mode for autocompletion
+(use-package company
+  :demand t
+  :straight (company :type git
+                     :host github
+                     :repo "company-mode/company-mode")
+  :init (global-company-mode 1)
+  :config
+  (setq company-idle-delay 0.2
+	company-minimum-prefix-length 1)
+  :commands global-company-mode)
 
-(use-package poudou-programming
-  :straight (poudou-programming :type git
-				:host github
-				:repo "kirstin-rhys/poudou"
-				:files ("lisp/poudou/programming/*.el"))
+;; Yasnippet, a snippet manager
+(use-package yasnippet
+  :defer t
+  :straight (yasnippet :type git
+                       :host github
+                       :repo "joaotavora/yasnippet")
+  :commands yas-insert-snippet)
+
+;; Lean4
+(use-package lean4-mode
+  :commands lean4-mode
+  :straight (lean4-mode
+	     :type git
+	     :host github
+	     :repo "leanprover-community/lean4-mode"
+	     :files ("*.el" "data"))
   :demand t)
+; :hook (lean4-mode . prog-minor-modes-common)
+
+;; (use-package poudou-programming
+;;   :straight (poudou-programming :type git
+;; 				:host github
+;; 				:repo "kirstin-rhys/poudou"
+;; 				:files ("lisp/poudou/programming/*.el"))
+;;   :demand t)
 				
 (provide 'poudou)
 
