@@ -52,6 +52,15 @@
 ;;            (plist (gethash key straight--recipe-cache)))
 ;;       (plist-get plist :local-repo))))
 
+
+(use-package poudou
+  :straight (poudou :type git
+		    :host github
+		    :repo "kirstin-rhys/poudou"
+		    :files ("lisp/poudou/*.el"))
+  :demand t)
+
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -85,12 +94,7 @@
 
 
 
-(use-package poudou
-  :straight (poudou :type git
-		    :host github
-		    :repo "kirstin-rhys/poudou"
-		    :files ("lisp/poudou/*.el"))
-  :demand t)
+
 
 (provide 'init)
 
