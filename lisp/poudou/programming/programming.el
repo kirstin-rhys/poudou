@@ -133,121 +133,118 @@
                     (lambda () (lsp-ui-flycheck-enable 1))))
 
 
-;; Python:
-(use-package python
-  :defer t
-  :straight nil
-  :init
-  (add-hook 'python-mode-hook 'prog-minor-modes-common)
-  (add-hook 'python-mode-hook 'lsp))
+;; ;; Python:
+;; (use-package python
+;;   :defer t
+;;   :straight nil
+;;   :hook (python-modfe-hook . (prog-minor-modes-common lsp)))
+
+;; ;; Treemacs browser:
+;; (use-package treemacs
+;;   :straight t
+;;   :config
+;;   (setq treemacs-git-mode 'simple)
+;;   (add-hook 'treemacs-mode-hook (lambda () (setq-local truncate-lines t)))
+;;   :commands treemacs--setup-icon)
 
 
-;; Treemacs browser:
-(use-package treemacs
-  :straight t
-  :config
-  (setq treemacs-git-mode 'simple)
-  (add-hook 'treemacs-mode-hook (lambda () (setq-local truncate-lines t)))
-  :commands treemacs--setup-icon)
+;; ;; Elisp:
+;; (use-package elisp-mode
+;;   :straight nil
+;;   :defer t
+;;   :hook ((emacs-lisp-mode . prog-minor-modes-common)))
+
+;; ;; TeX:
+;; (use-package auctex
+;;   :defer t
+;;   :straight t
+;;   :hook ((tex-mode . prog-minor-modes-common)
+;;          (LaTeX-mode . prog-minor-modes-common)))
 
 
-;; Elisp:
-(use-package elisp-mode
-  :straight nil
-  :defer t
-  :hook ((emacs-lisp-mode . prog-minor-modes-common)))
-
-;; TeX:
-(use-package auctex
-  :defer t
-  :straight t
-  :hook ((tex-mode . prog-minor-modes-common)
-         (LaTeX-mode . prog-minor-modes-common)))
-
-
-;; HTML:
-(use-package sgml-mode
-  :defer t
-  :straight nil
-  :config (progn (add-hook 'sgml-mode-hook 'prog-minor-modes-common)))
+;; ;; HTML:
+;; (use-package sgml-mode
+;;   :defer t
+;;   :straight nil
+;;   :config (progn (add-hook 'sgml-mode-hook 'prog-minor-modes-common)))
 
 
 
-;; Markdown
-(use-package markdown-mode
-  :defer t
-  :straight t
-  :config (progn (setq markdown-command "/usr/bin/pandoc")
-		 (add-hook 'markdown-mode-hook 'prog-minor-modes-common)))
+;; ;; Markdown
+;; (use-package markdown-mode
+;;   :defer t
+;;   :straight t
+;;   :config (progn (setq markdown-command "/usr/bin/pandoc")
+;; 		 (add-hook 'markdown-mode-hook 'prog-minor-modes-common)))
 
 
 
-;; Shell
-(use-package sh-script
-  :defer t
-  :straight nil
-  :config (progn (add-hook 'sh-mode-hook 'prog-minor-modes-common))
-  :commands sh-mode)
+;; ;; Shell
+;; (use-package sh-script
+;;   :defer t
+;;   :straight nil
+;;   :config (progn (add-hook 'sh-mode-hook 'prog-minor-modes-common))
+;;   :commands sh-mode)
 
 
-(use-package make-mode
-  :straight nil
-  :defer t
-  :init
-  (add-hook 'makefile-mode-hook 'prog-minor-modes-common))
+;; (use-package make-mode
+;;   :straight nil
+;;   :defer t
+;;   :init
+;;   (add-hook 'makefile-mode-hook 'prog-minor-modes-common))
 
 
-;; Json
-(use-package json-mode
-  :defer t
-  :straight (json-mode :type git
-                       :host github
-                       :repo "joshwnj/json-mode")
-  :config (progn (add-hook 'json-mode-hook 'prog-minor-modes-common)))
+;; ;; Json
+;; (use-package json-mode
+;;   :defer t
+;;   :straight (json-mode :type git
+;;                        :host github
+;;                        :repo "joshwnj/json-mode")
+;;   :config (progn (add-hook 'json-mode-hook 'prog-minor-modes-common)))
 
-;; Idris2 
-(use-package idris-mode
-  :defer t
-  :straight (idris-mode :type git
-                        :host github
-                        :repo "idris-hackers/idris-mode")
-  :config
-  (add-prog-minor-modes-common 'idris-mode-hook
-			       'idris-repl-mode-hook
-			       'idris-ipkg-mode-hook)
-  (setq idris-intepreter-path "idris2"))
+;; ;; Idris2 
+;; (use-package idris-mode
+;;   :defer t
+;;   :straight (idris-mode :type git
+;;                         :host github
+;;                         :repo "idris-hackers/idris-mode")
+;;   :config
+;;   (add-prog-minor-modes-common 'idris-mode-hook
+;; 			       'idris-repl-mode-hook
+;; 			       'idris-ipkg-mode-hook)
+;;   (setq idris-intepreter-path "idris2"))
 
-;; Coq
-(use-package proof-general
-  :straight t
-  :defer t)
+;; ;; Coq
+;; (use-package proof-general
+;;   :straight t
+;;   :defer t)
 
-(use-package company-coq
-  :after proof-general
-  :straight t
-  :defer t
-  :hook (coq-mode . (prog-minor-modes-common company-coq-mode)))
+;; (use-package company-coq
+;;   :after proof-general
+;;   :straight t
+;;   :defer t
+;;   :hook (coq-mode . (prog-minor-modes-common company-coq-mode)))
 
 
-;; Haskell
-(use-package haskell-mode
-  :straight (haskell-mode :type git
-                          :host github
-                          :repo "haskell/haskell-mode")
-  :init (setq haskell-process-type 'auto)
-  :hook (haskell . prog-minor-modes-common)
-  :defer t)
+;; ;; Haskell
+;; (use-package haskell-mode
+;;   :straight (haskell-mode :type git
+;;                           :host github
+;;                           :repo "haskell/haskell-mode")
+;;   :init (setq haskell-process-type 'auto)
+;;   :hook (haskell . prog-minor-modes-common)
+;;   :defer t)
 
-(use-package lsp-haskell
-  :straight t
-  :demand t
-  :after haskell-mode
-  :hook ((haskell-mode haskell-literate-mode) . lsp))
+;; (use-package lsp-haskell
+;;   :straight t
+;;   :demand t
+;;   :after haskell-mode
+;;   :hook ((haskell-mode haskell-literate-mode) . lsp))
 
-(use-package inf-haskell
-  :straight nil
-  :demand t
-  :after haskell-mode)
+;; (use-package inf-haskell
+;;   :straight nil
+;;   :demand t
+;;   :after haskell-mode)
 
 
 ;; Lean4
@@ -258,7 +255,7 @@
 	     :repo "leanprover/lean4-mode"
 	     :files ("*.el" "data")
 	     :hook (lean4-mode . prog-minor-modes-common))
-  :defer t)
+  :commands (lean4-mode))
 
 
 (provide 'poudou-programming)
