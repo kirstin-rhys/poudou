@@ -1,45 +1,45 @@
 
 
-;; Relevant to all programming before language packages are setup:
-;;;###autoload
-(defvar prog-minor-modes-common (list)
-  "A common hook for programming minor modes")
-;;;###autoload
-(defun prog-minor-modes-common ()
-  "A common hook for programming minor modes"
-  (interactive)
-  (mapc 'funcall prog-minor-modes-common))
-;;;###autoload
-(defun add-prog-minor-modes-common (&rest mode-hooks)
-  "Add prog-minor-modes-common to MODE-HOOKS"
-  (mapc (lambda (a) (add-hook a 'prog-minor-modes-common)) mode-hooks))
+;; ;; Relevant to all programming before language packages are setup:
+;; ;;;###autoload
+;; (defvar prog-minor-modes-common (list)
+;;   "A common hook for programming minor modes")
+;; ;;;###autoload
+;; (defun prog-minor-modes-common ()
+;;   "A common hook for programming minor modes"
+;;   (interactive)
+;;   (mapc 'funcall prog-minor-modes-common))
+;; ;;;###autoload
+;; (defun add-prog-minor-modes-common (&rest mode-hooks)
+;;   "Add prog-minor-modes-common to MODE-HOOKS"
+;;   (mapc (lambda (a) (add-hook a 'prog-minor-modes-common)) mode-hooks))
 
-;; Whitespace detection
-(defun show-trailing-whitespace ()
-  (interactive)
-  (setq show-trailing-whitespace t))
+;; ;; Whitespace detection
+;; (defun show-trailing-whitespace ()
+;;   (interactive)
+;;   (setq show-trailing-whitespace t))
 
-(push 'show-trailing-whitespace prog-minor-modes-common)
+;; (push 'show-trailing-whitespace prog-minor-modes-common)
 
-;; Ansi coloring
-(use-package ansi-color
-  :demand t
-  :straight nil)
+;; ;; Ansi coloring
+;; (use-package ansi-color
+;;   :demand t
+;;   :straight nil)
 
-;; Compile for... compilation
-(use-package compile
-  :after ansi-color
-  :defer t
-  :straight nil
-  :config
-  (defun colorize-compilation-buffer ()
-    (toggle-read-only)
-    (ansi-color-apply-on-region compilation-filter-start (point))
-    (toggle-read-only))
-  (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
-  ;; :general
-  ;; (:keymaps '(compilation-mode-map)
-  ;;           "SPC" nil))
+;; ;; Compile for... compilation
+;; (use-package compile
+;;   :after ansi-color
+;;   :defer t
+;;   :straight nil
+;;   :config
+;;   (defun colorize-compilation-buffer ()
+;;     (toggle-read-only)
+;;     (ansi-color-apply-on-region compilation-filter-start (point))
+;;     (toggle-read-only))
+;;   (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
+;;   ;; :general
+;;   ;; (:keymaps '(compilation-mode-map)
+;;   ;;           "SPC" nil))
 
 ;; Company mode for autocompletion
 
@@ -78,21 +78,21 @@
 
 
 
-;; Ripgrep for fast grepping through projects
-(use-package ripgrep
-  :defer t
-  :straight t)
+;; ;; Ripgrep for fast grepping through projects
+;; (use-package ripgrep
+;;   :defer t
+;;   :straight t)
 
 
-;; Magit, the excellent interface to git through emacs
-(use-package magit
-  :straight t
-  :demand t)
+;; ;; Magit, the excellent interface to git through emacs
+;; (use-package magit
+;;   :straight t
+;;   :demand t)
 
 
-(use-package git-time-machine
-  :straight t
-  :defer t)
+;; (use-package git-time-machine
+;;   :straight t
+;;   :defer t)
 
 (use-package flycheck
   :straight t
@@ -107,8 +107,7 @@
   :straight (lsp-ui :type git
                     :host github
                     :repo "emacs-lsp/lsp-ui")
-  :config
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+  :hook (lsp-mode-hook . lsp-ui-mode)
   ;; (set-face-attribute 'lsp-ui-sideline-code-action nil
   ;;                     :foreground "#4d4d4c"
   ;;                     :background "#ffffff")
@@ -253,8 +252,8 @@
 	     :type git
 	     :host github
 	     :repo "leanprover/lean4-mode"
-	     :files ("*.el" "data")
-	     :hook (lean4-mode . prog-minor-modes-common))
+	     :files ("*.el" "data"))
+; :hook (lean4-mode . prog-minor-modes-common)
   :commands (lean4-mode))
 
 
